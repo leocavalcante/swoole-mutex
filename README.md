@@ -1,5 +1,7 @@
 # Mutex
 
+[![Actions Status](https://github.com/leocavalcante/swoole-mutex/workflows/CI/badge.svg)](https://github.com/leocavalcante/swoole-mutex/actions)
+
 🚦 [Mutual exclusion](https://en.wikipedia.org/wiki/Mutual_exclusion) abstractions for PHP's [Swoole](https://www.swoole.co.uk/) concurrency run-time.
 
 > With great power comes great responsibility — Uncle Ben (I guess)
