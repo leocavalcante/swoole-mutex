@@ -14,5 +14,17 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mutex\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mutex\\Test\\": "tests/"
+        }
+    }
 }
