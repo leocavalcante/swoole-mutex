@@ -1,0 +1,18 @@
+{
+    "name": "leocavalcante/swoole-mutex",
+    "description": "Mutual exclusion abstractions for PHP's Swoole concurrency run-time.",
+    "type": "library",
+    "require-dev": {
+        "swoole/ide-helper": "^4.4",
+        "phpunit/phpunit": "^9.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "leocavalcante",
+            "email": "lc@leocavalcante.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
