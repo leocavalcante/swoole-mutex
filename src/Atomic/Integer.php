@@ -28,4 +28,10 @@ class Integer extends Atomic implements AtomicInterface
         $this->mut($this->value() - $by);
         return $this;
     }
+
+    public function set(int $value): self
+    {
+        $this->mut($value);
+        return $this;
+    }
 }

@@ -26,4 +26,12 @@ class IntegerTest extends TestCase
         $int->dec(2);
         go(fn() => $this->assertSame(0, $int->value()));
     }
+
+    public function testSet()
+    {
+        $int = new Integer(0);
+        go(fn() => $this->assertSame(0, $int->value()));
+        $int->set(42);
+        go(fn() => $this->assertSame(42, $int->value()));
+    }
 }
