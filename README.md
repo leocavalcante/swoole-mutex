@@ -11,3 +11,26 @@
 **This package is a [Facade](https://en.wikipedia.org/wiki/Facade_pattern) for [`Swoole\Table`](https://www.swoole.co.uk/docs/modules/swoole-table) providing common APIs for mutual exclusion patterns.**
 
 _And we all hail [**Edsger W. Dijkstra**](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra)._
+
+## Example
+
+Counting HTTP requests across >1 workers.
+
+```php
+use Mutex\Atomic\Integer;
+use Swoole\Http\{Request, Response, Server};
+
+$counter = new Integer();
+$server = new Server('127.0.0.1', 8000);
+
+$server->on('request', function (Request $req, Response $res) use ($counter): void {
+    if ($req->server['request_uri'] !== '/favicon.ico') {
+        $counter->inc();
+    }
+
+    $res->end('You are number: ' . $counter->value());
+});
+
+$server->set(['worker_num' => 4]);
+$server->start();
+```
