@@ -4,44 +4,28 @@ namespace Mutex\Atomic;
 
 use Swoole\Table;
 
-class Integer
+class Integer extends Atomic implements AtomicInterface
 {
-    private const VALUE_KEY = 'value';
-    private const INITIAL_KEY = '0';
-    private Table $table;
-
-    public function __construct(int $initial = 0)
+    public function __construct(int $initial = 0, int $size = 0)
     {
-        $this->table = new Table(1024);
-        $this->table->column(self::VALUE_KEY, Table::TYPE_INT);
-        $this->table->create();
-        $this->table->set(self::INITIAL_KEY, [self::VALUE_KEY => $initial]);
-    }
-
-    public function inc(int $by = 1): self
-    {
-        $this->table->set($this->next(), [self::VALUE_KEY => $this->value() + $by]);
-        return $this;
-    }
-
-    private function next(): string
-    {
-        return strval($this->table->count());
+        parent::__construct(Table::TYPE_INT, $size);
+        $this->init($initial);
     }
 
     public function value(): int
     {
-        return $this->table->get($this->last())[self::VALUE_KEY];
+        return intval(parent::value());
     }
 
-    private function last(): string
+    public function inc(int $by = 1): self
     {
-        return strval($this->table->count() - 1);
+        $this->mut($this->value() + $by);
+        return $this;
     }
 
     public function dec(int $by = 1): self
     {
-        $this->table->set($this->next(), [self::VALUE_KEY => $this->value() - $by]);
+        $this->mut($this->value() - $by);
         return $this;
     }
 }

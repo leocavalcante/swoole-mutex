@@ -7,12 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class IntegerTest extends TestCase
 {
-    public function testValue()
-    {
-        $int = new Integer(0);
-        go(fn() => $this->assertSame(0, $int->value()));
-    }
-
     public function testInc()
     {
         $int = new Integer(0);
