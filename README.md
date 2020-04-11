@@ -12,6 +12,12 @@
 
 _We all hail [**Edsger W. Dijkstra**](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) (and [Swoole team](https://github.com/orgs/swoole/people) for their amazing work)._
 
+## Install
+
+```bash
+composer require leocavalcante/swoole-mutex
+```
+
 ## Example
 
 Counting HTTP requests across >1 workers.
