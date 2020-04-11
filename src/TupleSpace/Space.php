@@ -18,12 +18,17 @@ class Space
 
     public function put(string $pattern, $value): self
     {
-        $this->table->set($pattern, [self::TUPLE_VALUE => $value]);
+        $this->table->set($pattern, [self::TUPLE_VALUE => serialize($value)]);
         return $this;
     }
 
-    public function take(string $pattern)
+    public function take(string $pattern, ?string $className = null)
     {
-        return $this->table[$pattern][self::TUPLE_VALUE];
+        return unserialize($this->table[$pattern][self::TUPLE_VALUE]);
+    }
+
+    public function takeInt(string $pattern): int
+    {
+        return intval($this->take($pattern));
     }
 }
