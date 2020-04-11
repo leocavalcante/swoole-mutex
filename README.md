@@ -34,3 +34,7 @@ $server->on('request', function (Request $req, Response $res) use ($counter): vo
 $server->set(['worker_num' => 4]);
 $server->start();
 ```
+
+---
+
+&copy; 2k2O
