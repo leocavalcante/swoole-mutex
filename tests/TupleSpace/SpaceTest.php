@@ -23,5 +23,11 @@ class SpaceTest extends TestCase
 
         go(fn() => $space->put('obj', $fixture));
         go(fn() => $this->assertSame('bar', $space->take('obj')->foo));
+
+        $fixture = [];
+        $fixture['foo'] = 'bar';
+
+        go(fn() => $space->put('arr', $fixture));
+        go(fn() => $this->assertSame('bar', $space->take('arr')['foo']));
     }
 }
