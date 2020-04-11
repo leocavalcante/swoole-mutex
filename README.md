@@ -1,6 +1,6 @@
 # Mutex
 
-Mutual exclusion abstractions for PHP's [Swoole](https://www.swoole.co.uk/) concurrency run-time.
+[Mutual exclusion](https://en.wikipedia.org/wiki/Mutual_exclusion) abstractions for PHP's [Swoole](https://www.swoole.co.uk/) concurrency run-time.
 
 > With great power comes great responsibility — Uncle Ben (I guess)
 
