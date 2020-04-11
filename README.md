@@ -10,7 +10,7 @@
 
 **This package is a [Facade](https://en.wikipedia.org/wiki/Facade_pattern) for [`Swoole\Table`](https://www.swoole.co.uk/docs/modules/swoole-table) providing common APIs for mutual exclusion patterns.**
 
-_And we all hail [**Edsger W. Dijkstra**](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra)._
+_We all hail [**Edsger W. Dijkstra**](https://en.wikipedia.org/wiki/Edsger_W._Dijkstra) (and [Swoole team](https://github.com/orgs/swoole/people) for their amazing work)._
 
 ## Example
 
